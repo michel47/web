@@ -1,0 +1,82 @@
+<html>
+<title>%name%: making websites at $1/second</title>
+<link rel="icon" href="//0.0.0.0:8088/favicon.ico" type="image/png">
+<link href="https://cdn.jsdelivr.net/gh/necolas/normalize.css@8.0.1/normalize.min.css" rel="stylesheet" type="text/css">
+<!-- vim: nospell
+http://127.0.0.1:8080/ipfs/uAXAAMxItChgBcBEUKyfuHzcOKnvebhTYe3FkRKA3ekQSDW5vcm1hbGl6ZS5jc3MY67IICgIIAQ/normalize.css
+
+<link href=
+https://csstools.github.io/normalize.css/latest/normalize.css
+rel="stylesheet" type="text/css">
+-->
+<link href="https://cdn.statically.io/gh/iglake/cssjs/master/css/style.css" rel="stylesheet" type="text/css">
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+
+<style>
+</style>
+<body>
+
+<div id=hero><h2>Hello World!</h2></div>
+
+<div>We are <b>%name%</b> and here is our official site: <a href=%origin%>%domain%</a>
+
+<p>There is no price for speed... you are in a hurry to get
+your presence online, before an event for instance or for a marketing campaign.
+Our pricing model is simple the longer it takes the cheaper it goes...
+
+<p>from <b>one dollar/sec. to 1c/per sec.</b>
+
+</div><br><div>
+<p>
+It takes literally 30 seconds to build and deploy a website under your
+own domain name ... 
+
+<p>
+So get yours today for one time just one $30
+
+<p>
+contact us at : <span>info@acme.com</span>
+<p>
+or fillup the form:
+<br>
+ <a href=https://docs.google.com/forms/d/16DJiyySLUYk6HNWn-IpAEjX1ZMECERjeyoZI0Ghci_c>
+ form-a-web-site-in-30-seconds</a>
+ <!--
+ https://docs.google.com/forms/u/1/d/16DJiyySLUYk6HNWn-IpAEjX1ZMECERjeyoZI0Ghci_c/downloadresponses?tz_offset=7200000
+ prefill links (https://docs.google.com/forms/d/16DJiyySLUYk6HNWn-IpAEjX1ZMECERjeyoZI0Ghci_c/prefill) :
+ - https://docs.google.com/forms/d/e/1FAIpQLSeluJtQaZ9xzXLO3xVJv7qo24EtPSXX_8AC73jJ1cx-wjl2zA/viewform?entry.2115499382=cadavre-exquis-e105632
+ - https://docs.google.com/forms/d/e/1FAIpQLSeluJtQaZ9xzXLO3xVJv7qo24EtPSXX_8AC73jJ1cx-wjl2zA/viewform?usp=pp_url&entry.2115499382=cadavre-exquis-e105631&entry.886810033=127.0.0.1
+ https://docs.google.com/spreadsheets/d/1qeWah6UW7-c0QxKRyVU_eld86PiytRtI21gct2yxphw/edit#gid=184055021
+ -->
+
+Your site will be available immediatly for your to review it;
+<br>however it will be save only after payement is received the the proper siteID
+
+
+
+
+
+
+</div>
+
+<script>
+ var map = {
+"127.0.0.1": { "name":"Local Paradize" },
+"acmetm.gq": { "name":"ACME™ a company making everything" },
+"estm.tk": { "name":"Electronic Systems™" },
+"brase.gq": { "name":"BlockRing & Artificial Systems Enterprise" },
+"rainbow.ml": { "name":"Rainbow Systems on the blockchain" },
+"pEHR.ml": { "name":"Personal Electronic Health Record  blockchain" },
+ }
+ d = document.location.hostname;
+ document.getElementsByTagName('span')[0].innerHTML = '<a href=mailto:michelc@'+d+'>michelc@'+d+'</a>'
+ e = document.getElementsByTagName('html')[0]
+ buf = e.innerHTML
+ m = map[d]
+ buf = buf.replace(/%name%/g,m['name'])
+ buf = buf.replace(/%domain%/g,d)
+ buf = buf.replace(/%origin%/g,document.location.origin)
+ e.innerHTML = buf;
+</script>
+</body>
+</html>

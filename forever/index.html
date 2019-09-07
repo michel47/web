@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<head>
+<!-- vim: nospell
+-->
+<meta charset="utf8"/>
+<link rel=preload href=http://gateway.ipfs.io/ipfs/QmYvLRePbqHwmR1fGqVf6jEysvrBevxUiU1FQv3vPcA4bK as=document>
+<link rel=preload href=https://cloudflare-ipfs.com/ipfs/QmYvLRePbqHwmR1fGqVf6jEysvrBevxUiU1FQv3vPcA4bK as=document>
+<link rel=preload href=https://web.archive.org/web/20190906oe_/http://siderus.io/ipfs/QmYvLRePbqHwmR1fGqVf6jEysvrBevxUiU1FQv3vPcA4bK as=fetch>
+<meta http-equiv="Access-Control-Allow-Origin" content="*"/>
+<meta http-equiv="Origin" content="http://localhost:4000"/>
+<!--[if IE]><!-->
+<script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.js"></script>
+<!--<![endif]-->
+</head><body>
+
+
+<p>Your data is in a "cold" storage ...
+We will pull it from the wayback machine,
+from the url <a href=#>#</a>, be patient
+
+
+</p>
+<!--
+<iframe src=https://cloudflare-ipfs.com/ipfs/QmYvLRePbqHwmR1fGqVf6jEysvrBevxUiU1FQv3vPcA4bK style="display:block;">
+-->
+
+<script type="text/javascript">
+
+const status = function(resp) { // for IE8
+  if (resp.status >= 200 && resp.status < 300) {
+    return Promise.resolve(resp)
+  }
+  return Promise.reject(new Error(resp.statusText))
+}
+
+var url='https://siderus.io/ipfs/QmYvLRePbqHwmR1fGqVf6jEysvrBevxUiU1FQv3vPcA4bK'
+    url='https://gateway.ipfs.io/ipfs/QmYvLRePbqHwmR1fGqVf6jEysvrBevxUiU1FQv3vPcA4bK'
+console.log('url: '+url);
+
+/* for IE8
+window.fetch(url).then(status).then(function(resp){ console.log(resp) } ).catch(function(e){ console.log(e); });
+*/
+
+window.fetch(url).then(status).then(function(resp){ return resp.text() })
+  .then(function(buf){
+    if (buf != undefined) {
+      document.getElementsByTagName('html')[0].innerHTML = buf
+    } else {
+      console.log('url: buf undefined')
+    }
+    return
+} ).catch(function(err){ console.log(err) } );
+
+ url='https://ipfs.io/ipfs/QmYvLRePbqHwmR1fGqVf6jEysvrBevxUiU1FQv3vPcA4bK' // CORS problem
+const stamp='20190906'
+const wback = 'https://web.archive.org/web/'
+var wburl = wback + stamp + 'oe_/' + url
+var e = document.getElementsByTagName('a')[0]
+    e.href = wburl; e.innerHTML = wburl
+console.log('wurl: '+wburl);
+/* 
+// this work w/ friendly origin servers !!!
+var request = new XMLHttpRequest();
+    request.open('GET', wburl,true);
+    request.send();
+    request.onload = function () {
+      resp = request.response.toString();
+      document.getElementsByTagName('html')[0].innerHTML = resp;
+    }
+
+*/
+
+window.fetch(wburl,{
+//mode:'no-cors', // => opaque !
+mode:'cors', // => Access-Control-Allow-Origin missing 
+method: 'GET',
+headers: { Accept: 'text/html', },
+})
+//.then(function(obj){ console.log(obj); return(obj) } )
+.then(status)
+.then(function(resp){ return resp.text() } ) 
+.then(function(buf){ document.getElementsByTagName('html')[0].innerHTML = buf; })
+.catch(function(error) { console.log('catch: '+error)
+  fetch(url).then(function(resp){resp.text()})
+  .then(function(buf){
+    if (buf != undefined) {
+      document.getElementsByTagName('html')[0].innerHTML = buf
+    } else {
+      console.log('wburl: buf undefined')
+    }
+    return
+  } ).catch(function(err){ console.log(err); });
+});
+/* */
+
+</script>
+</body>
