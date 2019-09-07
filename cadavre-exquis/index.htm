@@ -1,7 +1,8 @@
 ---
+jsversion: 1.4.3
 ---
 <!DOCTYPE html><html><head>
-<!--
+<!-- vim: nospell
 <script src=js/showdown.min.js></script>
 <link href="https://cdn.statically.io/gh/iglake/cssjs/master/css/style.css" rel="stylesheet" type="text/css"/>
 !-->
@@ -28,7 +29,8 @@ in order to view this <a href=https://www.nodesm.tk/>site</a></div>
 <!-- see : https://www.jsdelivr.com/package/npm/showdown -->
 <script src=https://cdn.jsdelivr.net/npm/showdown@latest/dist/showdown.min.js></script>
 {% if jekyll.environment == 'production' %}
-<script src=https://cdn.jsdelivr.net/gh/iglake/js@master/dist/inc-md.js></script>
+<!-- see [*](https://www.jsdelivr.com/package/gh/iglake/js) -->
+<script src=https://cdn.jsdelivr.net/gh/iglake/js@{{page.jsversion}}/dist/inc-md.js></script>
 {% else %}
 <!-- JEKYLL_ENV != production -->
 <script src=http://127.0.0.1:8088/js/inc-md.js></script>
