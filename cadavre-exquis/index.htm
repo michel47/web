@@ -19,6 +19,7 @@ in order to view this <a href=https://www.nodesm.tk/>site</a></div>
 {% if jekyll.environment == 'production' %}
 <a class=include href=https://michel47.github.io/web/%domain%/index.md>index.md</a>;
 {% else %}
+<!-- /!\ DEVELOPPEMENT VERSION -->
 <a class=include href=../../%domain%/index.md>index.md</a>;
 {% endif %}
 </div><!-- end of page -->
@@ -29,6 +30,7 @@ in order to view this <a href=https://www.nodesm.tk/>site</a></div>
 {% if jekyll.environment == 'production' %}
 <script src=https://cdn.jsdelivr.net/gh/iglake/js@master/dist/inc-md.js></script>
 {% else %}
+<!-- JEKYLL_ENV != production -->
 <script src=http://127.0.0.1:8088/js/inc-md.js></script>
 {% endif %}
 
