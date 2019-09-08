@@ -1,6 +1,6 @@
 # %title%
 
-%decription%
+%description%
 
 
 contact: [%email%](mailto:%email%)
