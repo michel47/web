@@ -29,7 +29,7 @@ rel="stylesheet" type="text/css">
 
 <div id=hero><h2>Hello World!</h2></div>
 
-<div>We are <b>%name%</b> and here is our official site: <a href=%origin%>%domain%</a>
+<div class=content>We are <b>%name%</b> and here is our official site: <a href=%origin%>%domain%</a>
 
 <p>There is no price for speed... you are in a hurry to get
 your presence online, before an event for instance or for a marketing campaign.
@@ -37,7 +37,7 @@ Our pricing model is simple the longer it takes the cheaper it goes...
 
 <p>from <b>one dollar/sec. to 1c/per sec.</b>
 
-</div><br><div>
+</div><br><div class=content>
 <p>
 It takes literally 30 seconds to build and deploy a website under your
 own domain name ... 
@@ -79,15 +79,18 @@ Your site will be available immediatly for your to review it;
 "rainbow.ml": { "name":"Rainbow Systems on the blockchain" },
 "pEHR.ml": { "name":"Personal Electronic Health Record  blockchain" },
  }
- d = document.location.origin;
- d = d.replace(/https*:\/\//,''); // suppress protocol part
- d = d.replace(/:\d+/,''); // suppress port part
+ hostname = document.location.hostname;
+ host = hostname.replace(/www./,''); // suppress www. part
  document.getElementsByTagName('span')[0].innerHTML = '<a href=mailto:michelc@'+d+'>michelc@'+d+'</a>'
  e = document.getElementsByTagName('html')[0]
  buf = e.innerHTML
- m = map[d]
+ m = map[host]
+ if (m['name']) {
  buf = buf.replace(/%name%/g,m['name'])
- buf = buf.replace(/%domain%/g,d)
+ } else {
+ buf = buf.replace(/%name%/g,host)
+ }
+ buf = buf.replace(/%domain%/g,hostname)
  buf = buf.replace(/%origin%/g,document.location.origin)
  e.innerHTML = buf;
 </script>
