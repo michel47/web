@@ -1,5 +1,5 @@
 ---
-jsversion: 1.4.3
+jsversion: 1.4.4
 ---
 <!DOCTYPE html><html><head>
 <!-- vim: nospell
@@ -21,16 +21,16 @@ in order to view this <a href=https://www.nodesm.tk/>site</a></div>
 <a class=include href=https://michel47.github.io/web/%domain%/index.md>index.md</a>;
 {% else %}
 <!-- /!\ DEVELOPPEMENT VERSION -->
-<a class=include href=../../%domain%/index.md>index.md</a>;
+<a class=include href=http://127.0.0.1:8088/web/%domain%/index.md>index.md</a>;
 {% endif %}
 </div><!-- end of page -->
-<br> This page is made for the humanity 4.0 with ♡, its source file is <a href=index.md>here</a>.
+<br> This page is made for the humanity 4.0 with ♡, its source file is <a class=include href=web/domain/index.md>here</a>.
 
 <!-- see : https://www.jsdelivr.com/package/npm/showdown -->
 <script src=https://cdn.jsdelivr.net/npm/showdown@latest/dist/showdown.min.js></script>
 {% if jekyll.environment == 'production' %}
-<!-- see [*](https://www.jsdelivr.com/package/gh/iglake/js) -->
-<script src=https://cdn.jsdelivr.net/gh/iglake/js@{{page.jsversion}}/dist/inc-md.js></script>
+<!-- v{{ page.jsversion }} see [*](https://www.jsdelivr.com/package/gh/iglake/js) -->
+<script src="https://cdn.jsdelivr.net/gh/iglake/js@{{ page.jsversion }}/dist/inc-md.js"></script>
 {% else %}
 <!-- JEKYLL_ENV != production -->
 <script src=http://127.0.0.1:8088/js/inc-md.js></script>
