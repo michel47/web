@@ -1,0 +1,30 @@
+# Site settings
+# vim: nospell
+port: 4000
+output: _site
+title: blockRing™
+description: The first eco-sociale blockchain (No Proof-of-Work, No Proof-of-Stake, Proof-of-witness)
+domain: blockRing™.gq
+date: 2019-09-15 13:36:14 CEST
+creation: 2019-09-15 12:39:08 CEST
+update: 2019-09-15 12:39:08 CEST
+name: BRNG
+author: "Michel G. Combes"
+email: michelc@blockring™.gq
+baseurl: ""
+url: "//jekyll.tk" # the base hostname & protocol for your site
+url: "https://michel47.github.io/web/blockringtm.gq/"
+netname: xxxx-yyyy-29d464
+url: "https://xxxx-yyyy-29d464.netlify.net"
+search: "https://duckduckgo.com/?q"
+googledocid: 1VfERUZ8oTEGlCT3Xn37yK1TOsYxFZuJryNNR7bhJdUM
+framaid: shqb
+gtag: UA-146588632-1
+
+exclude:
+ - publish.sh
+ - .org
+ - _site
+ - Gemfile
+ - Gemfile.lock
+ - travis.sh

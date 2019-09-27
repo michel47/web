@@ -1,0 +1,85 @@
+<!DOCTYPE html><html><head>
+<meta charset="utf8">
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+</head><body>
+<div id=hero class="content first"><h2>Welcome to The World Wide Files System</h2></div>
+<div class=warning>
+First you need to run <a href=https://ipfs.io/>IPFS</a>; then you are ready to go !
+</div>
+<div class=content><pre>
+Your peerid is <span id=peerid>QmPeerID</span>,
+your homeid is <span id=homeid>QmHomeID</span> (/files),
+your keyid is <span id=keyid>QmKeyID</span> and
+your identity link is <a id=link href=http://127.0.0.1:8080/ipns/webui.ipfs.io/#/files/my/identity>//files/my/identity</a>.
+</pre>
+</div>
+</body>
+
+<script>
+  var peerid;
+  var homeid;
+  var keyid;
+  var url='http://127.0.0.1:5001/api/v0/id';
+  var request = new XMLHttpRequest();
+  request.open('GET', url);
+  request.send();
+
+  request.onload = function () {
+    var resp = request.response.toString();
+    var data = JSON.parse(resp);
+    console.log(JSON.stringify(data));
+    peerid = data.ID;
+    document.getElementById('peerid').innerHTML = peerid
+    url='http://127.0.0.1:5001/api/v0/files/stat?arg=/&hash=1';
+    var request2 = new XMLHttpRequest();
+    request2.open('GET', url);
+    request2.send();
+    request2.onload = function () {
+      var resp = request2.response.toString();
+      var data = JSON.parse(resp);
+      //console.log(JSON.stringify(data));
+      homeid = data.Hash;
+      document.getElementById('homeid').innerHTML = homeid;
+      url='http://127.0.0.1:5001/api/v0/name/publish?key=files&arg=/ipfs/'+ homeid ;
+      var request3 = new XMLHttpRequest();
+      request3.open('GET', url);
+      request3.send();
+      request3.onload = function () {
+        var resp = request3.response.toString();
+        var data = JSON.parse(resp);
+        //console.log(JSON.stringify(data));
+        if (typeof(data.Type) !== 'undefined') {
+          url='http://127.0.0.1:5001/api/v0/key/gen?arg=files&type=rsa&size=3072'
+          var request4 = new XMLHttpRequest();
+          request4.open('GET', url);
+          request4.send();
+          request4.onload = function () {
+            var resp = request4.response.toString();
+            var data = JSON.parse(resp);
+            //console.log(JSON.stringify(data));
+            keyid = data.Id
+            url='http://127.0.0.1:5001/api/v0/name/publish?key=files&arg=/ipfs/'+ homeid ;
+            var request5 = new XMLHttpRequest();
+            request5.open('GET', url);
+            request5.send();
+            request5.onload = function () {
+              var resp = request5.response.toString();
+              var data = JSON.parse(resp);
+              //console.log(JSON.stringify(data));
+              keyid = data.Name
+              document.getElementById('keyid').innerHTML = keyid;
+            }
+          }
+        } else {
+        keyid = data.Name
+        document.getElementById('keyid').innerHTML = keyid;
+        // http://127.0.0.1:5001/ipns/webui.ipfs.io/#/files/my/identity
+        document.getElementById('link').href = 'http://gateway.ipfs.io/ipns/'+ keyid +'/my/identity';
+        document.getElementById('link').innerHTML = '@'+peerid+'/files/my/identity';
+        }
+        
+      }
+    }
+  }
+
+</script>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content=
+"HTML Tidy for HTML5 for Linux version 5.2.0">
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href=
+"http://fonts.googleapis.com/css?family=Josefin Slab">
+<style>
+body {
+  /* background: yellow; */
+  background-image: URL(http://ipfs.io/ipfs/z8bvj1SQiwC5KD9d5Y9JxJ9F91mYgtkaX/fallback.png),
+  linear-gradient(to left, white,lightblue);
+  background-repeat: no-repeat, repeat;
+  background-attachment: fixed;
+  background-position: bottom right, center;
+
+  font-family: Verdana;
+}
+div {
+ font-family: Josefin Slab;
+}
+</style>
+<link href=
+"http://cloudflare-ipfs.com/ipns/QmQBQfNEDm6nC8j3kCWquENbKJTJ37Mw998NZ68PLvayjx/style.css"
+rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" type="text/css" href=
+"http://fonts.googleapis.com/css?family=Fugaz One">
+<link rel="stylesheet" type="text/css" href=
+"http://fonts.googleapis.com/css?family=Clicker Script">
+<title></title>
+</head>
+<body>
+<div class="layer"></div>
+<div class="content" id="first">
+<h1 id="why-ladonna-j.-revay-is-empty-handed">Why Ladonna J. Revay
+is empty handed ?</h1>
+<p>sha3-224(0x0a020801) =
+17bc8b34c0bb0f32d7c0a03dd912b02380e6997dc27b2318a05169b6;<br>
+w/ multihash header:<br>
+171c.17bc8b34c0bb0f32d7c0a03dd912b02380e6997dc27b2318a05169b6<br>
+encoded in base 58:<br>
+<a href=
+"http://duckduckgo.com/?q=!g+z6cYNbecZSFzLjbSimKuibtdpGt7DAUMMt46aKQNdwfs">
+z6cYNbecZSFzLjbSimKuibtdpGt7DAUMMt46aKQNdwfs™</a></p>
+<p>funiq: bc8b34c0bb0f<br>
+luniq: 32d7c0a0<br>
+encoded in base <a href=
+"http://ipfs.io/ipfs/QmVcbzHfkv2FB2agXeHUhkZdCe7ocHKeKmBF9ZyGcj64Md">
+5494</a> : 1250,569,5383,1377 -&gt; Ladonna, Jaime<br>
+encoded in base <a href=
+"http://ipfs.io/ipfs/QmZj8rRYZjaCZDv3ZFpqioEFCsaUuidbmpLd4MV6B9TXN4">
+88799</a>: 34618,81551 -&gt; Revay, Casper</p>
+<p>Therefore empty-dir =&gt; Ladonna J. Revay</p>
+<pre><code>my $funiq = substr($bin,1,6); # 6 char (except 1st)
+my $luniq = substr($bin,7,4);  # 4 char 
+my @first = map { $flist-&gt;[$_] } &amp;encode_baser($funiq,5494);
+my @last = map { $llist-&gt;[$_] } &amp;encode_baser($luniq,88799);</code></pre>
+<p>--<br>
+bajub-disis-divus-mosuh-safur-busuf-tizab-pabut-tohif-rabog-magok-nojut-sanur-fasim-padid-kokuk</p>
+</div>
+<!-- vim: nospell
+
+=== # ==
+LIB: "${HOME}/GITrepo/Layout"
+layout:
+ - "bground.yml"
+ - libraries.yml
+ - "${HOME}/GITrepo/Layout/fonts.yml"
+ - ceres.yml
+...
+
+-->
+</body>
+</html>
