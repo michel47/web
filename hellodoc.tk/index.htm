@@ -1,5 +1,5 @@
 ---
-jsversion: 1.4.4
+jsversion: 1.5
 ---
 <!DOCTYPE html><html><head>
 <!-- vim: nospell
@@ -18,6 +18,7 @@ in order to view this <a href=https://www.nodesm.tk/>site</a></div>
 <div id=md style="display:block; background-color: lightblue; opacity:0.7">
 <!-- write your page here in markdown format -->
 {% if jekyll.environment == 'production' %}
+<!-- export JEKYLL_ENV=production -->
 <a class=include href=https://michel47.github.io/web/%domain%/index.md>index.md</a>;
 {% else %}
 <!-- /!\ DEVELOPPEMENT VERSION -->
