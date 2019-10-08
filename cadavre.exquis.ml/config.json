@@ -4,4 +4,6 @@
 "title":"{{site.title}}",
 "description":"{{site.description}}",
 "name":"{{site.name}}"
+"tag":"{{site.tag}}"
+"netname":"{{site.netname}}"
 }
