@@ -1,0 +1,1 @@
+../focus/ideas.md
