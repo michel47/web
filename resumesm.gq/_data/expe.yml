@@ -1,0 +1,66 @@
+--- # work experiences
+
+HLTM:
+ name: Healthium
+ title: "fondateur &amp; chef d'equipe developement'"
+ desc: 'development plateforme "dossier electronique du patient" (DEP)'
+
+GCB:
+ name: "GC-Bank, Ecublens CH"
+ title: 'fondateur &amp; blockchain architect'
+ desc: development d'une blockchain permissionée, plateforme collaborative et crypto monnaie eco-sociales
+
+AC:
+ name: Business Evolution, Rolle CH
+ title: IT support
+ desc: support informatique pour le groupe, deployement site web
+
+INTL:
+ name: Intel, Lausanne, CH
+ title: IT support and system administrator
+ desc: administration server linux locaux, backup, et equipement laboratoire,
+       support windows pour utilisateurs, deployment base de donnees production, et controle de ligne en Chine.
+
+LMX:
+ name: Lemoptix, Lausanne, CH
+ title: system administrator
+ desc: gestion, support et maintenance du park du informatique et server l'entreprise (windows)
+
+
+ISL: Intersil, Milpitas, USA
+
+SPX: Spatial Photonics, Sunnyvale, USA
+RFX: Reflectiviys, Montain View, USA
+ODI: Soft Computing, Santa Cruz USA
+APT:
+ name: Apt Technologies, Santa Cruz USA
+ title: system administrator
+ desc: gestion, support et maintenance du park du informatique l'entreprise (windows)
+
+IFX:
+ name: Infineon Technology, Munich DE
+ start: 1999
+ end: 2000
+ desc: development plateform test pour microcontroleurs disk durs
+
+ 
+TXN:
+ name: Texas Instruments France, Villeneuve Loubet FR
+ start: 1995
+ end: 1997
+ title: chef d'équipe infrastructure
+ desc: |-
+   administration systeme et support CAO et ADE pour les équipes conceptions
+   developpment d'outils de migration technologiques
+   afin d'accelerer la mise sur le marcher des produits de l'entreprise
+
+UPMC:
+ name: "Université Pierre &amp; Marie Curie, Paris FR"
+ start: 1994
+ end: 1990
+ title: doctorant + admin
+ desc: gestion et maintenance du park du informatique du laboratoire (aegis, unix & linux)
+
+lexique:
+ CAO: Conception Assistée par Ordinateur (CAD)
+ ACE: Automation Conception Electronique (EDA)

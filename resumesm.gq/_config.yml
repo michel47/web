@@ -1,0 +1,13 @@
+--- # Jekyll's config
+name: Resume℠
+email: michelc@resumesm.gq
+
+netname: pedantic-yalow-3e44e0
+url: https://pedantic-yalow-3e44e0.netlify.com
+
+pgw: https://cloudflare-ipfs.com
+icdn: https://cdn.statically.io/img/gateway.ipfs.io
+
+search_url: https://duckduckgo.com/?q
+
+sass_dir: _sass

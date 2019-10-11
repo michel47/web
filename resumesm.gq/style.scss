@@ -1,0 +1,153 @@
+---
+background-lan: /ipfs/Z5wZ9oUSpsyhALkyTpRDomMmrpAhXjB9QV8MdBHXhSNViExbyqjedvYsJ5jkJ6LUiL4ccx/focus.jpg
+background-por: /ipfs/uAXAALxIpChgBcBEUQcbfvdKNbzK4-RD2jJy3QL8ZBfQSCWhzdHJ5LmpwZxiAkCwKAggB/hstry.jpg
+---
+@charset "utf-8";
+
+$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size:   18px;
+
+$spacing-unit:     30px ;
+
+$text-color:       #111 ;
+$background-color: #fdfdfd ;
+$text-color-inverted: #eee ;
+$background-dark: #111;
+
+$background-img-lan: "https://cloudflare-ipfs.com{{page.background-lan}}";
+$background-img-por: "https://cloudflare-ipfs.com{{page.background-por}}";
+
+$brand-color:      #2a7ae2 ;
+
+$black: rgba(1,0,2,.6);
+$hero-color: lighten(rgb(232,191,199), 5%);
+$medical-blue: #98EDFE;
+$purple-ish: rgb(106, 90, 205);
+$green-color: rgb(23,64,56);
+$brown-ish:    rgb(44,52,15);
+
+$brand-color:    $brown-ish;
+$corner-color:   $brand-color ;
+/*
+$brand-color: $green-color;
+$brand-color: $purple-ish;
+$brand-color: $medical-blue;
+$brand-color: darkorange;
+$brand-color: forestgreen;
+$brand-color: darkgreen;
+$brand-color: darkcyan;
+*/
+$brand-sat: saturate($brand-color,60%);
+$brand-hue: adjust-hue($brand-color,-45deg);
+
+$brand-bg: darken(rgba($brand-color,.6),10%);
+$brand-div: lighten(saturate($brand-hue,40%), 60%);
+
+$grey-color: #222;
+$brand-color-light: lighten($brand-color, 40%) ;
+$brand-color-dark:  darken($brand-color, 25%) ;
+
+// Width of the content area
+$content-width:  80%;
+$max-width:  800px;
+
+$content-width-hr:  calc(80% + 36px);
+$max-width-hr:  calc(800px + 2em);
+
+
+// @import "main";
+
+a:link { color: #26B; text-decoration: underline; text-decoration-style: dashed;}
+a:hover { color: hotpink; text-decoration-style: solid;}
+a:visited { color: #234; }
+a:active { color: blue; text-decoration-style: wavy;}
+
+body {
+  background-image: linear-gradient(to bottom right, $grey-color,$corner-color);
+  //background-image:url(http://127.0.0.1:8080/ipfs/QmaNEy1VECBM1mLxWQqjrA997GpHoXdy8KcgUfQdcRFxDk/wp-doj.png);
+  background-attachment: fixed;
+}
+
+div {
+ background-image: linear-gradient(to bottom left, white,$brand-div);
+ color: $text-color; 
+ padding: 1rem;
+ font-size: $base-font-size;
+ text-align: justify;
+ text-align-last: left;
+ text-justify: inter-character;
+ text-justify: auto;
+ letter-spacing: +0.05em;
+
+ margin: auto;
+ border: 1px solid;
+
+ overflow-wrap: break-word;
+ word-wrap: break-word;
+ -webkit-hyphens: auto;
+ -ms-hyphens: auto;
+ hyphens: auto;
+ hyphenate-limit-chars: 10 4 4;
+
+}
+
+hr { margin-bottom: 0; background-color: $brand-color; color: transparent;
+     height: 10px;}
+
+div.content {
+ opacity: 0.96;
+
+ position: relative;
+ margin: auto;
+
+  border-radius: 4px;
+  box-shadow:2px 20px 10px rgba(0, 0, 0, 0.40);
+}
+
+img { max-width: 95%; max-height: 720px; margin: auto;} 
+
+
+#hero {
+ //color: $brand-color; background: $background-color; opacity: 1.0; 
+ color: $background-color; background: $brand-bg; opacity: 1.0; 
+ // filter: invert(90%); -webkit-filter: invert(90%);
+ h1,h2 { color: $hero-color; }
+ position: sticky !important;
+ top: 4px;
+ z-index: -1;
+ margin-bottom: -1px;
+
+}
+
+hr {
+  max-width: $max-width-hr;
+  width: $content-width-hr;
+}
+div {
+ max-width: $max-width;
+ width: $content-width;
+}
+
+body {
+  background-image:url($background-img-lan);
+  background-position: left;
+  background-size: auto 100vh;
+  background-repeat: repeat-x;
+}
+/*
+@media only screen and (max-width: 768px) {
+}
+*/
+@media screen and (orientation:portrait) {
+ /* for mobiles: */
+ hr { width: calc(100% - 36px + 2em); }
+ div { width: calc(100% - 36px); color: black; }
+ body {
+  background-image:url($background-img-por);
+  background-position: top;
+  background-size: 100vw auto;
+  background-repeat: repeat-y;
+  background-repeat: no-repeat;
+ }
+}
+
