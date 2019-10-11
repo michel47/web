@@ -1,3 +1,5 @@
 --- # Jekyll's config
 sass_dir: _sass
 email: michelc@myfocus.ml
+netname: pedantic-yalow-3e44e0
+url: https://pedantic-yalow-3e44e0.netlify.com

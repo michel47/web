@@ -5,7 +5,10 @@ background-img: /ipfs/Z5wZ9oUSpsyhALkyTpRDomMmrpAhXjB9QV8MdBHXhSNViExbyqjedvYsJ5
 ---
 
 
-We are __{{page.site}}__ and here is our official site: <{{site.url}}>
+We are __{{page.site}}__ and we are keeping you 
+on tracks !
+
+here is our official site: <{{site.url}}>
 
 ____
 {% include README.md %}
