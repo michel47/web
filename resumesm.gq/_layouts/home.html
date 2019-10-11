@@ -1,5 +1,9 @@
 <html>
-<title>{{page.name}}: making websites at accessible to everyone </title>
+{% if page title %}
+<title>{{page.title}} | {{page.description}} | {{site.title}} </title>
+{% else %} 
+<title>{{site.title}} | {{site.summary}} </title>
+{% endif %} 
 <link rel="icon" href="//0.0.0.0:8088/favicon.ico" type="image/png">
 <!--
 -->

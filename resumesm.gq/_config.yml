@@ -1,6 +1,8 @@
 --- # Jekyll's config
 name: Resume℠
 email: michelc@resumesm.gq
+title: Resume℠ 
+summary: Resume Service Mark
 
 netname: happy-heisenberg-d5da00
 url: https://happy-heisenberg-d5da00.netlify.com
