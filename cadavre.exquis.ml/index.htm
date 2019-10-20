@@ -52,4 +52,30 @@ info@cadavre.exquis.ml
 <a href=https://www.jsdelivr.com/package/gh/iglake/js>
 <img style="opacity=0.8;" src=https://data.jsdelivr.com/v1/package/gh/iglake/js/badge?style=rounded></a>
 <a href="//duckduckgo.com/?q=!g+{{site.tag}}"><img src="https://img.shields.io/badge/tag-{{site.tag}}-yellow.svg?style=flat-square" alt="{{site.tag}}" /></a>
+<span id=ipaddr><a href="//duckduckgo.com/?q=!g+%ip%"><img src="https://img.shields.io/badge/IP-%ip%-pink.svg?style=flat-square" alt="%ip%" /></a></span>
 <a title="Netlify Status" href=https://app.netlify.com/sites/{{site.netname}}><img src=https://api.netlify.com/api/v1/badges/{{site.badgename}}/deploy-status></a>
+
+
+<script>// getting ip ..
+getj('http://iglake.heliohost.org/cgi-bin/ip.pl?fmt=json');
+function getj(url) {
+    fetch(url)
+    .then( resp => resp.json() )
+    .then( function(obj) {
+       console.log(obj);
+       let elem = document.getElementById('ipaddr');
+       if (elem) {
+         elem.innerHTML = elem.innerHTML.replace(/%ip%/g,obj['ipaddr'])
+       }
+       let elems = document.getElementsByClassName('ip');
+       for(let i=0; i<elems.length; i++) {
+         if (typeof elems[i].href != 'undefined') {
+           elems[i].href = 'http://'+ obj['ipaddr'] +'/';
+         }
+         elems[i].innerHTML = obj['ipaddr'];
+       }
+       
+    }
+    ).catch(e => console.log(e));
+}
+</script>
