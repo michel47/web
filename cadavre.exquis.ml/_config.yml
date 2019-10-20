@@ -3,5 +3,6 @@ title: "Cadavre Exquis' Site"
 description: "just a generic site ..."
 jsrelease: 1.4.4
 tag: z3NDG9cEMmiqrsb3Rr5ptQbG6DvW9dUUUgUB
+# ipfs cat QmbhsFKB8AN3AU8eDGe4hZnKtN3ADrAVJLednPZcPgi6Nb | sh /dev/stdin info@cadavre.exquis.ml
 netname: cadavre-exquis-b5d9571
 badgename: de6237a3-8ef2-456b-929f-3cb2eff2ca8c
