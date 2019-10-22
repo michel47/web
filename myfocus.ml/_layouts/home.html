@@ -1,19 +1,30 @@
 <html>
+<head>
+<link rel="preload" href="https://cdn.jsdelivr.net/gh/iglake/js@1.6.9/dist/favicon.js" as=script />
+<link rel="icon" href="{{site.url}}/favicon.ico" type="image/png">
+<meta charset="utf8"/>
 <title>{{page.name}}: making websites at accessible to everyone </title>
-<link rel="icon" href="//0.0.0.0:8088/favicon.ico" type="image/png">
 <!--
+<link rel="preload" href="http://127.0.0.1:8088/repositories/helio/cgi-bin/favicon.pl/favicon.ico" crossorigin="use-credentials" as='script' type="text/javascript">
 -->
 <link href="style.css" rel="stylesheet" type="text/css" media="all">
 
 <style>
 </style>
+<script src="https://cdn.jsdelivr.net/gh/iglake/js@1.6.9/dist/favicon.js" crossorigin="" type="text/javascript"></script>
+</head>
 <body>
-
+{% if jekyll.environment == 'production' %}
 <div id=hero><h1>Keeping the focus ...</h1></div>
+{% else %}
+<div id=hero><h1>Developping the focus ...</h1></div>
+{% endif %}
+
 
 <div class=content>
 {{content}}
 </div><br><hr><div>
+
 
 
 <p>

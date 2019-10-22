@@ -1,9 +1,10 @@
-## this is my focus map !
+## This is my focus map !
 
+![+]()
 
 * IT resume : <http://resumesm.gq>
 * IT emergency computer repairman !
-
+* migrate articles (~/StaticWeb/Pelican/src/GCBank/articles/)
 * portefolio
 * get a rake account (https://getrake.io/#how-it-works)
   see also [*](https://www.one-tab.com/page/XSSs-D4LRbi_otcvSviBQw)
