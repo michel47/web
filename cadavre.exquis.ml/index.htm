@@ -1,5 +1,6 @@
 ---
 jsversion: 1.6
+cssversion: 1.4
 title: Cadavre Exquis
 ---
 <!DOCTYPE html><html><head>
@@ -9,14 +10,16 @@ title: Cadavre Exquis
 !-->
 <meta charset="utf8">
 <link ref=preload href="https://cdn.jsdelivr.net/npm/showdown@latest/dist/showdown.min.js" as="script"/>
-<link href="https://cdn.jsdelivr.net/gh/iglake/cssjs@master/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="https://cdn.jsdelivr.net/gh/iglake/cssjs@{{ page.cssversion }}/css/style.css" rel="stylesheet" type="text/css"/>
 </head><body>
+<!-- ............................................................................................. -->
 <div id="hero" class="first content">%title% (%domain%)</div><br>
+<!-- ............................................................................................. -->
 <div id="rendered" class=content>You need to run
 <a href=https://ipfs.io/>IPFS</a> on <a href=https://webui.ipfs.io/>127.0.0.1:8080</a>
 in order to view this <a href=https://www.nodesm.tk/>site</a></div>
 <br>
-
+<!-- ............................................................................................. -->
 <div id=md style="display:block; background-color: lightblue; opacity:0.7">
 <!-- write your page here in markdown format -->
 {% if jekyll.environment == 'production' %}
@@ -26,6 +29,7 @@ in order to view this <a href=https://www.nodesm.tk/>site</a></div>
 <a class=include href=http://127.0.0.1:8088/web/%domain%/index.md>index.md</a>;
 {% endif %}
 </div><!-- end of page -->
+<!-- ............................................................................................. -->
 <br> This page is made for the humanity 4.0 with ♡, its source file is <a class=include href=web/domain/index.md>here</a>.
 
 <!-- see : https://www.jsdelivr.com/package/npm/showdown -->
@@ -43,8 +47,9 @@ in order to view this <a href=https://www.nodesm.tk/>site</a></div>
 {% endif %}
 <script> DNS.Query('_json.'+domain,'TXT', callback('hero')) </script>
 
+<!-- ............................................................................................. -->
 <!--
-note a site tag is a hashkey prooving the ownership
+note a site.tag is a hashkey prooving the ownership
 ipfs cat QmbhsFKB8AN3AU8eDGe4hZnKtN3ADrAVJLednPZcPgi6Nb | sh /dev/stdin \
 info@cadavre.exquis.ml
 -->
@@ -54,26 +59,35 @@ info@cadavre.exquis.ml
 <a href="//duckduckgo.com/?q=!g+{{site.tag}}"><img src="https://img.shields.io/badge/tag-{{site.tag}}-yellow.svg?style=flat-square" alt="{{site.tag}}" /></a>
 <span id=ipaddr><a href="//duckduckgo.com/?q=!g+%ip%"><img src="https://img.shields.io/badge/IP-%ip%-pink.svg?style=flat-square" alt="%ip%" /></a></span>
 <a title="Netlify Status" href=https://app.netlify.com/sites/{{site.netname}}><img src=https://api.netlify.com/api/v1/badges/{{site.badgename}}/deploy-status></a>
-
-
+<!-- ............................................................................................. -->
 <script>// getting ip ..
-getj('https://iglake.heliohost.org/cgi-bin/ip.pl?fmt=json');
+getj('http://iglake.heliohost.org/cgi-bin/ip.pl?fmt=json');
 function getj(url) {
     fetch(url)
     .then( resp => resp.json() )
     .then( function(obj) {
        console.log(obj);
-       let elem = document.getElementById('ipaddr');
-       if (elem) {
-         elem.innerHTML = elem.innerHTML.replace(/%ip%/g,obj['ipaddr'])
+       let elem = document.getElementById('md');
+       if (elem) { // change in tag[id=md]
+          //elem.onreadystatechang;
+          elem.onload = function () { // trigger when md is rendered ... (broken)
+             elem.innerHTML = elem.innerHTML.replace(/%ip%/g,obj['ipaddr'])
+             console.log(elem)
+          }
        }
+       elem = document.getElementById('ipaddr');
+       if (elem) { // change in tag[id=ipaddr]
+           elem.innerHTML = elem.innerHTML.replace(/%ip%/g,obj['ipaddr'])
+       }
+       /* 
        let elems = document.getElementsByClassName('ip');
-       for(let i=0; i<elems.length; i++) {
+       for(let i=0; i<elems.length; i++) { // change tags[class=ip]
          if (typeof elems[i].href != 'undefined') {
            elems[i].href = 'http://'+ obj['ipaddr'] +'/';
          }
          elems[i].innerHTML = obj['ipaddr'];
        }
+       */
        
     }
     ).catch(e => console.log(e));
