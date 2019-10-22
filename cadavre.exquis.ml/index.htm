@@ -1,5 +1,5 @@
 ---
-jsversion: 1.6
+jsversion: 3643ed7
 cssversion: 1.4
 title: Cadavre Exquis
 ---
@@ -11,6 +11,7 @@ title: Cadavre Exquis
 <meta charset="utf8">
 <link ref=preload href="https://cdn.jsdelivr.net/npm/showdown@latest/dist/showdown.min.js" as="script"/>
 <link href="https://cdn.jsdelivr.net/gh/iglake/cssjs@{{ page.cssversion }}/css/style.css" rel="stylesheet" type="text/css"/>
+<script src="https://cdn.jsdelivr.net/gh/iglake/js@{{ page.jsversion }}/dist/favicon.js"></script>
 </head><body>
 <!-- ............................................................................................. -->
 <div id="hero" class="first content">%title% (%domain%)</div><br>
@@ -93,3 +94,4 @@ function getj(url) {
     ).catch(e => console.log(e));
 }
 </script>
+
