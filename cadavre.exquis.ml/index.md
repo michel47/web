@@ -11,7 +11,7 @@ rr: %rr%
 
 our license is very permissive : [LICENCE](LICENCE.htm)
 
-oh by the way check your <span id=ip>ip</span> ([%ip%](ip.htm))
+oh by the way check your <span id=ip>ip</span> ([%ip%](test/ip.htm))
 
 [brng]: {{DUCK}}=!g+%22blockRing™%22
 [CURI]: {{DUCK}}=!g+cadavre+exquis+mutable+%23CURI
