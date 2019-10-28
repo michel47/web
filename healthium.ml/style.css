@@ -1,1 +1,40 @@
+body {
+  background-image: URL(https://cdn.statically.io/img/ipfs.blockringtm.ml/ipfs/z8bvizEJWUUfKiAJcJuMVJ4GeqCn9z8Zx);
+}
+img#logo { width:110px; padding: 2px; vertical-align: middle }
 .content { padding: 1em 1em 1px 2em; }
+
+div.content { background-color: lightblue; 
+  background-image: linear-gradient(to bottom right, white,lightblue);
+}
+
+@media screen and (orientation:portrait) {
+  body { background-position: left;
+  background-size: 100vw auto;
+  background-repeat: repeat-y;
+  padding: 0; margin: 2px;
+  }
+  div { width: calc(100vw - 4px); }
+
+div.content {
+ width: calc(100% - 2em);
+ padding: 1em;
+}
+
+}
+@media screen and (orientation:landscape) {
+  body { background-position: bottom;
+  background-size: auto 100vh;
+  background-repeat: repeat-x;
+}
+
+div {
+ max-width: 740px;
+}
+
+div.content {
+ width: calc(100% - 6em);
+ padding: 3em;
+}
+
+}

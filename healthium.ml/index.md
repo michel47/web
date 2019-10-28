@@ -1,11 +1,11 @@
-# %title%
+### %title%
 
 %description%
 
-It allows health continuity when you travel, of consult a new doctor;
-it allows researchers to analyze de-identified data to advance health.
+It allows health continuity when you travel, or consult a new doctor;
+it allows researchers to analyze de-identified data to advance health as well.
 
-All you need is a [Human-IP-Address][HIP] and our [application][HA]
+All you need is a [Human-IP-Address][HIP] and our [application][HA].
 
 contact: [%email%](mailto:%email%)
 
