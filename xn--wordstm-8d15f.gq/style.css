@@ -1,0 +1,5 @@
+body { background-image: URL(https://cdn.statically.io/img/cloudflare-ipfs.com/ipfs/uAXAALhIoChgBcBEUb7DSswuV_qrQBmMzoylTj4tkCCoSCGdkYmcuanBnGIPBMQoCCAE/gdbg.jpg); }
+div.content {
+  background-image: linear-gradient(to bottom right, white,lightblue);
+}
+img#logo { height:42px; vertical-align: middle; }

@@ -1,0 +1,50 @@
+---
+jsversion: 1.4.4
+logo: bluedia.svg
+---
+<!DOCTYPE html><html><head>
+<link href="favicon.ico" rel="icon" type="image/x-icon"/>
+<!-- vim: nospell
+<script src=js/showdown.min.js></script>
+<link href="https://cdn.statically.io/gh/iglake/cssjs/master/css/style.css" rel="stylesheet" type="text/css"/>
+!-->
+<meta charset="utf8">
+<link ref=preload href="https://cdn.jsdelivr.net/npm/showdown@latest/dist/showdown.min.js" as="script"/>
+<link href="https://cdn.jsdelivr.net/gh/iglake/cssjs@master/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+</head><body>
+
+<div id="hero" class="first content">
+<h1><img id=logo src={{page.logo}} alt="🔷">%hero%</h1>
+</div>
+
+
+<div id="rendered" class=content>You need to run
+<a href=http://ipfs.io/>IPFS</a> on <a href=https://webui.ipfs.io/>127.0.0.1:8080</a>
+in order to view this <a href=https://www.nodesm.tk/>site</a></div>
+<br>
+
+<div id=md style="display:block; background-color: lightblue; opacity:0.7">
+<!-- write your page here in markdown format -->
+{% if jekyll.environment == 'production' %}
+<a class=include href=https://michel47.github.io/web/%domain%/index.md>index.md</a>;
+{% else %}
+<!-- /!\ DEVELOPPEMENT VERSION -->
+<a href=http://127.0.0.1:8088/web/%domain%/index.md>index.md</a>;
+<a class=include href=index.md>index.md</a>;
+{% endif %}
+</div><!-- end of page -->
+<br> This page is made for the humanity 4.0 with ♡, its source file is <a class=include href=web/domain/index.md>here</a>.
+
+<!-- see : https://www.jsdelivr.com/package/npm/showdown -->
+<script src=https://cdn.jsdelivr.net/npm/showdown@latest/dist/showdown.min.js></script>
+{% if jekyll.environment == 'production' %}
+<!-- v{{ page.jsversion }} see [*](https://www.jsdelivr.com/package/gh/iglake/js) -->
+<script src="https://cdn.jsdelivr.net/gh/iglake/js@{{ page.jsversion }}/dist/inc-md.js"></script>
+{% else %}
+<!-- JEKYLL_ENV != production -->
+<script src=http://127.0.0.1:8088/GITrepo/iglake/cssjs/js/src/inc-md.js></script>
+{% endif %}
+
+<!--
+-->
