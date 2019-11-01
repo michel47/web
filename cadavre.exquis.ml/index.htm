@@ -1,5 +1,5 @@
 ---
-jsversion: 1.6.9
+jsversion: 1.7
 cssversion: 1.4
 title: Cadavre Exquis
 ---
@@ -61,12 +61,11 @@ info@cadavre.exquis.ml
 <!-- v{{ page.jsversion }} see [*](https://www.jsdelivr.com/package/gh/iglake/js) -->
 <script src="https://cdn.jsdelivr.net/gh/iglake/js@{{ page.jsversion }}/dist/inc-md.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/iglake/js@{{ page.jsversion }}/dist/dns.js"></script>
-<script src="https://raw.githubusercontent.com/iglake/js/v1.6.9/dist/config.js"></script>
+<script src="https://raw.githubusercontent.com/iglake/js/v1.7.5/dist/config.js"></script>
 {% else %}
 <!-- JEKYLL_ENV != production -->
 <script src=http://127.0.0.1:8088/js/inc-md.js></script>
-<script src=http://127.0.0.1:8088/repositories/helio/js/dns.js></script>
 <script src="https://iglake.github.io/js/dist/config.js"></script>
 {% endif %}
 
-<script> DNS.Query('_json.'+domain,'TXT', callback('hero')) </script>
+<script> CFG.DNS('_json.'+domain, callback('hero')) </script>
