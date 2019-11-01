@@ -1,5 +1,5 @@
 ---
-jsversion: 1.7
+jsversion: 1.7.5
 cssversion: 1.4
 title: Cadavre Exquis
 ---
@@ -60,8 +60,10 @@ info@cadavre.exquis.ml
 {% if jekyll.environment == 'production' %}
 <!-- v{{ page.jsversion }} see [*](https://www.jsdelivr.com/package/gh/iglake/js) -->
 <script src="https://cdn.jsdelivr.net/gh/iglake/js@{{ page.jsversion }}/dist/inc-md.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/iglake/js@{{ page.jsversion }}/dist/dns.js"></script>
-<script src="https://raw.githubusercontent.com/iglake/js/v1.7.5/dist/config.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/iglake/js@{{ page.jsversion }}/dist/config.js"></script>
+<!--
+<script src="https://raw.githubusercontent.com/iglake/js/master/dist/config.js"></script>
+-->
 {% else %}
 <!-- JEKYLL_ENV != production -->
 <script src=http://127.0.0.1:8088/js/inc-md.js></script>
