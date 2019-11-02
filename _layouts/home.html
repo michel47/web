@@ -43,10 +43,12 @@ note a site.tag is a hashkey prooving the ownership
 ipfs cat QmbhsFKB8AN3AU8eDGe4hZnKtN3ADrAVJLednPZcPgi6Nb | sh /dev/stdin \
 info@cadavre.exquis.ml
 -->
+<img alt="GitHub" src="https://img.shields.io/github/license/michel47/web?style=flat-square">
 <a href=https://www.jsdelivr.com/package/gh/iglake/js>
 <img style="opacity=0.8;" src=https://data.jsdelivr.com/v1/package/gh/iglake/js/badge?style=rounded></a>
 <a href="//duckduckgo.com/?q=!g+{{site.tag}}"><img src="https://img.shields.io/badge/tag-{{site.tag}}-yellow.svg?style=flat-square" alt="{{site.tag}}" /></a>
 <span id=ipaddr><a href="//duckduckgo.com/?q=!g+%ip%"><img src="https://img.shields.io/badge/IP-%ip%-pink.svg?style=flat-square" alt="%ip%" /></a></span>
+<img alt="Mozilla HTTP Observatory Grade" src="https://img.shields.io/mozilla-observatory/grade-score/%domain%">
 <a title="Netlify Status" href=https://app.netlify.com/sites/{{site.netname}}><img src=https://api.netlify.com/api/v1/badges/{{site.badgename}}/deploy-status></a>
 </div>
 <!-- ============================================================================================= -->
@@ -66,4 +68,4 @@ info@cadavre.exquis.ml
 {% endif %}
 
 <script> CFG.DNS('_json.'+domain, callback('hero')) </script>
-<script> CFG.File('config.json, callback('body')) </script>
+<script> CFG.File('config.json', callback('body')) </script>
