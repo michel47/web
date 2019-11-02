@@ -1,6 +1,6 @@
 ---
 jsversion: 1.7
-cssversion: 1.6
+cssversion: master
 title: Your Own WebSites for on time $30
 ---
 
